@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "parking-app",
-    "slug": "parking-app",
+    "name": "mapspot-mobile",
+    "slug": "mapspot-mobile",
     "privacy": "public",
     "sdkVersion": "36.0.0",
     "platforms": ["ios", "android"],
