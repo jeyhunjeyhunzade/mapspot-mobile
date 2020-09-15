@@ -7,105 +7,116 @@ import {
   TouchableOpacity,
   Picker,
   FlatList,
+  TouchableWithoutFeedback,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
+import * as theme from "../../assets/theme";
+
 const { width, height } = Dimensions.get("screen");
 
-const TaskDetails = ({ task }) => {
+const TaskDetails = ({ task, setActive }) => {
   const [hours, setHours] = useState({});
 
-  const shadowOpt = {
-    width: 160,
-    height: 170,
-    // color: "#000",
-    border: 2,
-    radius: 3,
-    opacity: 0.2,
-    x: 0,
-    y: 3,
-    style: { marginVertical: 5 },
-  };
+  // const shadowOpt = {
+  //   width: 160,
+  //   height: 170,
+  //   // color: "#000",
+  //   border: 2,
+  //   radius: 3,
+  //   opacity: 0.2,
+  //   x: 0,
+  //   y: 3,
+  //   style: { marginVertical: 5 },
+  // };
 
   return (
-    <View key={task.id} style={[styles.taskDetails, styles.shadow]}>
-      <View style={styles.taskDetails_section1}>
-        <Text style={{ fontSize: 16 }}>
-          x {task.spots} {task.title}
-        </Text>
-        <Picker
-          selectedValue={hours[task.id]}
-          style={{ height: 50, width: 100 }}
-          onValueChange={(itemValue, itemIndex) =>
-            setHours({ hours: { ...hours, [task.id]: itemValue } })
-          }
-        >
-          <Picker.Item label="01:00" value="1" />
-          <Picker.Item label="02:00" value="2" />
-          <Picker.Item label="03:00" value="3" />
-          <Picker.Item label="04:00" value="4" />
-          <Picker.Item label="05:00" value="5" />
-          <Picker.Item label="06:00" value="6" />
-        </Picker>
-        {/* <View style={styles.hourSelector}>
+    <TouchableWithoutFeedback key={task.id} onPress={() => setActive(task.id)}>
+      <View style={[styles.taskDetails, styles.shadow]}>
+        <View style={styles.taskDetails_section1}>
+          <Text style={{ fontSize: 16 }}>
+            x {task.spots} {task.title}
+          </Text>
+          <Picker
+            selectedValue={hours[task.id]}
+            style={{ height: 50, width: 100 }}
+            onValueChange={(itemValue, itemIndex) =>
+              setHours({ hours: { ...hours, [task.id]: itemValue } })
+            }
+          >
+            <Picker.Item label="01:00" value="1" />
+            <Picker.Item label="02:00" value="2" />
+            <Picker.Item label="03:00" value="3" />
+            <Picker.Item label="04:00" value="4" />
+            <Picker.Item label="05:00" value="5" />
+            <Picker.Item label="06:00" value="6" />
+          </Picker>
+          {/* <View style={styles.hourSelector}>
             <Text style={{ fontSize: 16 }}>05:00 hrs</Text>
           </View> */}
-      </View>
-
-      <View style={styles.taskDetails_section2}>
-        <View
-          style={{
-            flex: 0.8,
-            // justifyContent: "center",
-            alignItems: "center",
-            marginHorizontal: 24,
-          }}
-        >
-          <View
-            style={{
-              flex: 1,
-              flexDirection: "row",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
-            <Ionicons name="ios-pricetag" size={16} color="#7D818A" />
-            <Text style={{ paddingLeft: 5 }}>${task.price}</Text>
-          </View>
-
-          <View
-            style={{
-              flex: 1,
-              flexDirection: "row",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
-            <Ionicons name="ios-star" size={16} color="#7D818A" />
-            <Text style={{ paddingLeft: 5 }}>{task.rating}</Text>
-          </View>
         </View>
-        <TouchableOpacity style={styles.getTask}>
-          <View style={styles.getTask_part1}>
-            <Text style={{ fontSize: 24, color: "white" }}>
-              ${task.price * 2}
-            </Text>
-            <Text style={{ color: "white" }}>
-              {task.price}x{hours[task.id]} hrs
-            </Text>
+
+        <View style={styles.taskDetails_section2}>
+          <View
+            style={{
+              flex: 0.8,
+              // justifyContent: "center",
+              alignItems: "center",
+              marginHorizontal: 24,
+            }}
+          >
+            <View
+              style={{
+                flex: 1,
+                flexDirection: "row",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
+              <Ionicons
+                name="ios-pricetag"
+                size={16}
+                color={theme.COLORS.gray}
+              />
+              <Text style={{ paddingLeft: 5 }}>${task.price}</Text>
+            </View>
+
+            <View
+              style={{
+                flex: 1,
+                flexDirection: "row",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
+              <Ionicons name="ios-star" size={16} color={theme.COLORS.gray} />
+              <Text style={{ paddingLeft: 5 }}>{task.rating}</Text>
+            </View>
           </View>
-          <View style={styles.getTask_part2}>
-            <Text style={{ fontSize: 24, color: "white" }}>{">"}</Text>
-          </View>
-        </TouchableOpacity>
+          <TouchableOpacity style={styles.getTask}>
+            <View style={styles.getTask_part1}>
+              <Text style={{ fontSize: 24, color: theme.COLORS.white }}>
+                ${task.price * 2}
+              </Text>
+              <Text style={{ color: theme.COLORS.white }}>
+                {task.price}x{hours[task.id]} hrs
+              </Text>
+            </View>
+            <View style={styles.getTask_part2}>
+              <Text style={{ fontSize: 24, color: theme.COLORS.white }}>
+                {">"}
+              </Text>
+            </View>
+          </TouchableOpacity>
+        </View>
       </View>
-    </View>
+    </TouchableWithoutFeedback>
   );
 };
 
 const styles = StyleSheet.create({
   taskDetails: {
-    backgroundColor: "white",
+    backgroundColor: theme.COLORS.white,
     borderRadius: 6,
     padding: 12,
     flexDirection: "row",
@@ -123,7 +134,7 @@ const styles = StyleSheet.create({
   getTask: {
     flex: 1.8,
     flexDirection: "row",
-    backgroundColor: "#B40B15",
+    backgroundColor: theme.COLORS.red,
     padding: 12,
     borderRadius: 6,
   },
@@ -139,12 +150,12 @@ const styles = StyleSheet.create({
   hourSelector: {
     width: 100,
     borderRadius: 6,
-    borderColor: "grey",
+    borderColor: theme.COLORS.gray,
     borderWidth: 0.5,
     padding: 4,
   },
   shadow: {
-    shadowColor: "black",
+    shadowColor: theme.COLORS.black,
     shadowOffset: {
       width: 10,
       height: 12,

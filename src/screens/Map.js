@@ -1,13 +1,17 @@
-import React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import React, { useState } from "react";
+import { StyleSheet, View, Text, StatusBar } from "react-native";
 import MapView from "react-native-maps";
+
 import Header from "../components/Header";
 import TaskBar from "../components/TaskBar";
 import { tasks } from "../../mock/mockTaskDetails";
+import * as theme from "../../assets/theme";
 
 const { Marker } = MapView;
 
-const Map = () => {
+const Map = ({ currentPosition }) => {
+  const [active, setActive] = useState(null);
+
   return (
     <View style={styles.container}>
       <Header />
@@ -21,19 +25,29 @@ const Map = () => {
         style={styles.map}
       >
         {tasks.map((task) => (
-          <Marker key={task.id} coordinate={task.coordinate}>
-            <View style={[styles.taskMarker, styles.markerShadow]}>
-              <Text style={{ color: "#B40B15", fontWeight: "bold" }}>
+          <Marker
+            key={task.id}
+            coordinate={task.coordinate}
+            onPress={() => setActive(task.id)}
+          >
+            {/* FIXME:  fixed with Marker onPress prop*/}
+            <View
+              style={[
+                styles.taskMarker,
+                active === task.id ? styles.active : null,
+              ]}
+            >
+              <Text style={{ color: theme.COLORS.red, fontWeight: "bold" }}>
                 ${task.price}{" "}
               </Text>
-              <Text style={{ color: "#7D818A" }}>
+              <Text style={{ color: theme.COLORS.gray }}>
                 ({task.free}/{task.spots})
               </Text>
             </View>
           </Marker>
         ))}
       </MapView>
-      <TaskBar />
+      <TaskBar setActive={setActive} />
     </View>
   );
 };
@@ -41,27 +55,33 @@ const Map = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: theme.COLORS.white,
+    marginTop: StatusBar.currentHeight,
   },
   map: {
-    flex: 3,
+    flex: 3.8,
   },
   taskMarker: {
     flexDirection: "row",
-    backgroundColor: "white",
+    backgroundColor: theme.COLORS.white,
     borderRadius: 24,
     paddingVertical: 12,
     paddingHorizontal: 24,
+    borderWidth: 0.5,
+    borderColor: theme.COLORS.white,
   },
-  markerShadow: {
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 12,
-    },
-    //FIXME: its seems shadows doesnt work
-    shadowOpacity: 0.1,
-    shadowRadius: 4.0,
+  // markerShadow: {
+  //   shadowColor: "#000",
+  //   shadowOffset: {
+  //     width: 0,
+  //     height: 12,
+  //   },
+  //   //FIXME: its seems shadows doesnt work
+  //   shadowOpacity: 0.1,
+  //   shadowRadius: 4.0,
+  // },
+  active: {
+    borderColor: theme.COLORS.red,
   },
 });
 

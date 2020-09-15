@@ -3,7 +3,7 @@ import { StyleSheet, FlatList } from "react-native";
 import TaskDetails from "./TaskDetails";
 import { tasks } from "../../mock/mockTaskDetails";
 
-const TaskBar = () => {
+const TaskBar = ({ setActive }) => {
   return (
     <FlatList
       horizontal
@@ -15,7 +15,9 @@ const TaskBar = () => {
       style={styles.taskBar}
       data={tasks}
       keyExtractor={(item) => `task-${item.id}`}
-      renderItem={({ item }) => <TaskDetails task={item} />}
+      renderItem={({ item }) => (
+        <TaskDetails task={item} setActive={setActive} />
+      )}
     />
   );
 };
