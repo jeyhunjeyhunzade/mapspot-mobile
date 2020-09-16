@@ -10,6 +10,10 @@ export const tasks = [
       latitude: 37.78225,
       longitude: -122.4424,
     },
+    distance: 7,
+    description: `Lorem ipsum is a name for a common type of placeholder text.
+    
+Also known as filler or dummy text, this is simply copy that serves to fill a space without actually saying anything meaningful.`,
   },
   {
     id: 2,
@@ -22,6 +26,10 @@ export const tasks = [
       latitude: 37.72825,
       longitude: -122.3324,
     },
+    distance: 3,
+    description: `Lorem ipsum is a name for a common type of placeholder text.
+    
+Also known as filler or dummy text, this is simply copy that serves to fill a space without actually saying anything meaningful.`,
   },
   {
     id: 3,
@@ -34,6 +42,10 @@ export const tasks = [
       latitude: 37.72325,
       longitude: -122.4454,
     },
+    distance: 8,
+    description: `Lorem ipsum is a name for a common type of placeholder text.
+    
+Also known as filler or dummy text, this is simply copy that serves to fill a space without actually saying anything meaningful.`,
   },
   {
     id: 4,
@@ -46,5 +58,9 @@ export const tasks = [
       latitude: 37.26825,
       longitude: -122.4564,
     },
+    distance: 5,
+    description: `Lorem ipsum is a name for a common type of placeholder text.
+    
+Also known as filler or dummy text, this is simply copy that serves to fill a space without actually saying anything meaningful.`,
   },
 ];

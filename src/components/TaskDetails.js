@@ -15,9 +15,7 @@ import * as theme from "../../assets/theme";
 
 const { width, height } = Dimensions.get("screen");
 
-const TaskDetails = ({ task, setActive }) => {
-  const [hours, setHours] = useState({});
-
+const TaskDetails = ({ task, setActive, setActiveModal, hours, setHours }) => {
   // const shadowOpt = {
   //   width: 160,
   //   height: 170,
@@ -93,7 +91,10 @@ const TaskDetails = ({ task, setActive }) => {
               <Text style={{ paddingLeft: 5 }}>{task.rating}</Text>
             </View>
           </View>
-          <TouchableOpacity style={styles.getTask}>
+          <TouchableOpacity
+            style={styles.getTask}
+            onPress={() => setActiveModal(task)}
+          >
             <View style={styles.getTask_part1}>
               <Text style={{ fontSize: 24, color: theme.COLORS.white }}>
                 ${task.price * 2}

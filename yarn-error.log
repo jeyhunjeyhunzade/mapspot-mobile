@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add react-native-maps -E
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add react-native-modal
 
 PATH: 
   C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Jeyhun\bin;C:\Python27;C:\Python27\Scripts;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Yarn\bin;C:\Program Files\Microsoft SQL Server\130\Tools\Binn;C:\Program Files\nodejs;C:\Users\Jeyhun\AppData\Local\Microsoft\WindowsApps;C:\Users\Jeyhun\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Jeyhun\AppData\Local\Yarn\bin;C:\Users\Jeyhun\AppData\Roaming\npm
@@ -33,6 +33,7 @@ npm manifest:
       "react-dom": "~16.9.0",
       "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
       "react-native-gesture-handler": "~1.5.0",
+      "react-native-maps": "0.26.1",
       "react-native-reanimated": "~1.4.0",
       "react-native-safe-area-context": "0.6.0",
       "react-native-screens": "2.0.0-alpha.12",
@@ -40,8 +41,8 @@ npm manifest:
       "react-navigation-stack": "^2.0.16"
     },
     "devDependencies": {
-      "babel-preset-expo": "~8.0.0",
-      "@babel/core": "^7.0.0"
+      "@babel/core": "^7.0.0",
+      "babel-preset-expo": "~8.0.0"
     },
     "private": true
   }

@@ -4,6 +4,7 @@ import MapView from "react-native-maps";
 
 import Header from "../components/Header";
 import TaskBar from "../components/TaskBar";
+import CustomModal from "../components/Modal";
 import { tasks } from "../../mock/mockTaskDetails";
 import * as theme from "../../assets/theme";
 
@@ -11,6 +12,8 @@ const { Marker } = MapView;
 
 const Map = ({ currentPosition }) => {
   const [active, setActive] = useState(null);
+  const [activeModal, setActiveModal] = useState(null);
+  const [hours, setHours] = useState({});
 
   return (
     <View style={styles.container}>
@@ -47,7 +50,17 @@ const Map = ({ currentPosition }) => {
           </Marker>
         ))}
       </MapView>
-      <TaskBar setActive={setActive} />
+      <TaskBar
+        setActive={setActive}
+        setActiveModal={setActiveModal}
+        hours={hours}
+        setHours={setHours}
+      />
+      <CustomModal
+        activeModal={activeModal}
+        setActiveModal={setActiveModal}
+        hours={hours}
+      />
     </View>
   );
 };
