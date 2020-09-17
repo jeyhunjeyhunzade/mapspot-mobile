@@ -10,7 +10,7 @@ import * as theme from "../../assets/theme";
 
 const { Marker } = MapView;
 
-const Map = ({ currentPosition }) => {
+const HomeScreen = ({ currentPosition }) => {
   const [active, setActive] = useState(null);
   const [activeModal, setActiveModal] = useState(null);
   const [hours, setHours] = useState({});
@@ -98,4 +98,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Map;
+export default HomeScreen;
