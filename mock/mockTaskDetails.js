@@ -7,8 +7,8 @@ export const tasks = [
     spots: 20,
     free: 10,
     coordinate: {
-      latitude: 37.78225,
-      longitude: -122.4424,
+      latitude: 40.440195,
+      longitude: 49.843301,
     },
     distance: 7,
     description: `Lorem ipsum is a name for a common type of placeholder text.
@@ -23,8 +23,8 @@ Also known as filler or dummy text, this is simply copy that serves to fill a sp
     spots: 20,
     free: 12,
     coordinate: {
-      latitude: 37.72825,
-      longitude: -122.3324,
+      latitude: 40.395237,
+      longitude: 49.953164,
     },
     distance: 3,
     description: `Lorem ipsum is a name for a common type of placeholder text.
@@ -39,8 +39,8 @@ Also known as filler or dummy text, this is simply copy that serves to fill a sp
     spots: 22,
     free: 8,
     coordinate: {
-      latitude: 37.72325,
-      longitude: -122.4454,
+      latitude: 40.475058,
+      longitude: 49.840436,
     },
     distance: 8,
     description: `Lorem ipsum is a name for a common type of placeholder text.
@@ -55,8 +55,8 @@ Also known as filler or dummy text, this is simply copy that serves to fill a sp
     spots: 20,
     free: 15,
     coordinate: {
-      latitude: 37.26825,
-      longitude: -122.4564,
+      latitude: 40.420714,
+      longitude: 49.916997,
     },
     distance: 5,
     description: `Lorem ipsum is a name for a common type of placeholder text.

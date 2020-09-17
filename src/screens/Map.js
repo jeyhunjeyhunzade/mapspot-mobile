@@ -20,8 +20,8 @@ const Map = ({ currentPosition }) => {
       <Header />
       <MapView
         initialRegion={{
-          latitude: 37.78825,
-          longitude: -122.4324,
+          latitude: 40.4093,
+          longitude: 49.8671,
           latitudeDelta: 0.0922,
           longitudeDelta: 0.0421,
         }}

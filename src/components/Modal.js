@@ -120,8 +120,9 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 12,
   },
   modalInfo: {
+    flex: 1,
     flexDirection: "row",
-    justifyContent: "space-evenly",
+    paddingLeft: 8,
     paddingVertical: theme.SIZES.base,
     borderTopWidth: 1,
     borderTopColor: theme.COLORS.overlay,
@@ -129,7 +130,7 @@ const styles = StyleSheet.create({
     borderBottomColor: theme.COLORS.overlay,
   },
   modalHours: {
-    paddingVertical: height * 0.135,
+    paddingVertical: height * 0.12,
   },
   payBtn: {
     flexDirection: "row",
