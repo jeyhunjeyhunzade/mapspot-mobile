@@ -11,7 +11,6 @@ import {
 // import LinearGradient from "react-native-linear-gradient";
 import * as Animatable from "react-native-animatable";
 import { LinearGradient } from "expo-linear-gradient";
-import { FontAwesome } from "@expo/vector-icons";
 
 import * as theme from "../../assets/theme";
 
