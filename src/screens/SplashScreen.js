@@ -25,8 +25,8 @@ const SplashScreen = ({ navigation }) => {
       <View style={styles.header}>
         <Animatable.Image
           animation="bounceIn"
-          duration={1500}
-          source={require("../../assets/logo.png")}
+          duration={2500}
+          source={require("../../assets/mapspot.png")}
           style={styles.logo}
           resizeMode="stretch"
         />
@@ -78,6 +78,7 @@ const styles = StyleSheet.create({
   logo: {
     width: height_logo,
     height: height_logo,
+    borderRadius: 100,
   },
   title: {
     color: "#05375a",
