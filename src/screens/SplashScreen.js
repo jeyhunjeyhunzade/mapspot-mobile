@@ -32,20 +32,15 @@ const SplashScreen = ({ navigation }) => {
         />
       </View>
       <Animatable.View style={styles.footer} animation="fadeInUpBig">
-        <Text style={styles.title}>Stay connected with everyone!</Text>
-        <Text style={styles.text}>Sign in with account</Text>
+        <Text style={styles.title}>Sadece sür ve para kazan!</Text>
+        <Text style={styles.text}>Giriş yap ve başla!</Text>
         <View style={styles.button}>
           <TouchableOpacity onPress={() => navigation.navigate("SignInScreen")}>
             <LinearGradient
               colors={["#d83c54", "#961125"]}
               style={styles.signIn}
             >
-              <Text style={styles.textSign}>Get Started</Text>
-              {/* <FontAwesome
-                name="angle-right"
-                size={theme.SIZES.icon * 1.2}
-                color={theme.COLORS.white}
-              /> */}
+              <Text style={styles.textSign}>Başla</Text>
             </LinearGradient>
           </TouchableOpacity>
         </View>

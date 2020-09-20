@@ -10,6 +10,7 @@ import {
   TouchableWithoutFeedback,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import { MaterialCommunityIcons, Entypo } from "@expo/vector-icons";
 
 import * as theme from "../../assets/theme";
 
@@ -32,10 +33,8 @@ const TaskDetails = ({ task, setActive, setActiveModal, hours, setHours }) => {
     <TouchableWithoutFeedback key={task.id} onPress={() => setActive(task.id)}>
       <View style={[styles.taskDetails, styles.shadow]}>
         <View style={styles.taskDetails_section1}>
-          <Text style={{ fontSize: 16 }}>
-            x {task.spots} {task.title}
-          </Text>
-          <Picker
+          <Text style={{ fontSize: 16 }}>{task.title}</Text>
+          {/* <Picker
             selectedValue={hours[task.id]}
             style={{ height: 50, width: 100 }}
             onValueChange={(itemValue, itemIndex) =>
@@ -48,7 +47,22 @@ const TaskDetails = ({ task, setActive, setActiveModal, hours, setHours }) => {
             <Picker.Item label="04:00" value="4" />
             <Picker.Item label="05:00" value="5" />
             <Picker.Item label="06:00" value="6" />
-          </Picker>
+          </Picker> */}
+          <View
+            style={{
+              flex: 1,
+              flexDirection: "row",
+              marginTop: 15,
+            }}
+          >
+            <Entypo
+              name="medal"
+              size={theme.SIZES.icon * 1.1}
+              color={theme.COLORS.gray}
+            />
+            <Text style={styles.iconText}>{task.score} puan</Text>
+          </View>
+
           {/* <View style={styles.hourSelector}>
             <Text style={{ fontSize: 16 }}>05:00 hrs</Text>
           </View> */}
@@ -71,12 +85,14 @@ const TaskDetails = ({ task, setActive, setActiveModal, hours, setHours }) => {
                 alignItems: "center",
               }}
             >
-              <Ionicons
+              {/* <Ionicons
                 name="ios-pricetag"
                 size={16}
                 color={theme.COLORS.gray}
               />
-              <Text style={{ paddingLeft: 5 }}>${task.price}</Text>
+              <Text style={{ paddingLeft: 5 }}>${task.price}</Text> */}
+              <Ionicons name="ios-star" size={16} color={theme.COLORS.gray} />
+              <Text style={{ paddingLeft: 5 }}>{task.rating}</Text>
             </View>
 
             <View
@@ -87,8 +103,12 @@ const TaskDetails = ({ task, setActive, setActiveModal, hours, setHours }) => {
                 alignItems: "center",
               }}
             >
-              <Ionicons name="ios-star" size={16} color={theme.COLORS.gray} />
-              <Text style={{ paddingLeft: 5 }}>{task.rating}</Text>
+              <MaterialCommunityIcons
+                name="map-marker-distance"
+                size={18}
+                color={theme.COLORS.gray}
+              />
+              <Text style={{ paddingLeft: 3 }}>{task.distance}km</Text>
             </View>
           </View>
           <TouchableOpacity
@@ -97,10 +117,11 @@ const TaskDetails = ({ task, setActive, setActiveModal, hours, setHours }) => {
           >
             <View style={styles.getTask_part1}>
               <Text style={{ fontSize: 24, color: theme.COLORS.white }}>
-                ${task.price * 2}
+                ${task.price}
               </Text>
-              <Text style={{ color: theme.COLORS.white }}>
-                {task.price}x{hours[task.id]} hrs
+              <Text style={{ color: theme.COLORS.white, fontSize: 12 }}>
+                {/* {task.price}x{hours[task.id]} hrs */}
+                detaylar
               </Text>
             </View>
             <View style={styles.getTask_part2}>
