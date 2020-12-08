@@ -7,7 +7,12 @@ import {
   TouchableOpacity,
 } from "react-native";
 import Modal from "react-native-modal";
-import { Ionicons, FontAwesome } from "@expo/vector-icons";
+import {
+  Ionicons,
+  FontAwesome,
+  MaterialCommunityIcons,
+  Entypo,
+} from "@expo/vector-icons";
 
 import * as theme from "../../assets/theme";
 const { width, height } = Dimensions.get("screen");
@@ -63,36 +68,44 @@ const CustomModal = ({ activeModal, setActiveModal, hours }) => {
           </View>
 
           <View style={styles.taskInfoIcons}>
-            <Ionicons
+            {/* <Ionicons
               name="ios-pin"
               size={theme.SIZES.icon * 1.1}
+              color={theme.COLORS.gray}
+            /> */}
+            <MaterialCommunityIcons
+              name="map-marker-distance"
+              size={18}
               color={theme.COLORS.gray}
             />
             <Text style={styles.iconText}>{activeModal.distance}km</Text>
           </View>
 
           <View style={styles.taskInfoIcons}>
-            <Ionicons
-              name="ios-car"
+            
+            <Entypo
+              name="medal"
               size={theme.SIZES.icon * 1.1}
               color={theme.COLORS.gray}
             />
-            <Text style={styles.iconText}>
-              {activeModal.free}/{activeModal.spots}
-            </Text>
+            <Text style={styles.iconText}>{activeModal.score}</Text>
           </View>
         </View>
 
         <View style={styles.modalHours}>
-          <Text style={{ textAlign: "center" }}>
-            Choose your Booking Period:{" "}
+          <Text style={{ textAlign: "center", color: "purple" }}>
+            There will be animation{" "}
           </Text>
-          <Text style={{ textAlign: "center" }}>05:00 hours</Text>
+          <Text style={{ textAlign: "center", color: "purple" }}>
+            There will be animation
+          </Text>
         </View>
 
         <View>
           <TouchableOpacity style={styles.payBtn}>
-            <Text style={styles.payInfo}>Proceed to pay $20</Text>
+            <Text
+              style={styles.payInfo}
+            >{`Start task and earn $${activeModal.price}!`}</Text>
             <FontAwesome
               name="angle-right"
               size={theme.SIZES.icon * 1.5}
@@ -122,7 +135,7 @@ const styles = StyleSheet.create({
   modalInfo: {
     flex: 1,
     flexDirection: "row",
-    paddingLeft: 8,
+    paddingLeft: 18,
     paddingVertical: theme.SIZES.base,
     borderTopWidth: 1,
     borderTopColor: theme.COLORS.overlay,

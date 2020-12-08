@@ -44,7 +44,7 @@ const HomeScreen = ({ currentPosition }) => {
                 ${task.price}{" "}
               </Text>
               <Text style={{ color: theme.COLORS.gray }}>
-                ({task.free}/{task.spots})
+                ({task.distance}km)
               </Text>
             </View>
           </Marker>

@@ -67,7 +67,7 @@ const SignInScreen = ({ navigation }) => {
         <View style={styles.action}>
           <FontAwesome name="user-o" color="#05375a" size={20} />
           <TextInput
-            placeholder="Your Email"
+            placeholder="Your email"
             style={styles.textInput}
             autoCapitalize="none"
             onChangeText={(val) => textInputChange(val)}
@@ -82,7 +82,7 @@ const SignInScreen = ({ navigation }) => {
         <View style={styles.action}>
           <Feather name="lock" color="#05375a" size={20} />
           <TextInput
-            placeholder="Your Password"
+            placeholder="Your password"
             style={styles.textInput}
             autoCapitalize="none"
             secureTextEntry={data.secureTextEntry ? true : false}

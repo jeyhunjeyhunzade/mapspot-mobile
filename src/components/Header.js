@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <View style={styles.header}>
       <View style={{ flex: 1, justifyContent: "center" }}>
-        <Text style={styles.title}>Detected Location</Text>
+        <Text style={styles.title}>Detected location</Text>
         <Text style={styles.location}>Baku, AZ</Text>
       </View>
       <View

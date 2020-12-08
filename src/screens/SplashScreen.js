@@ -11,7 +11,6 @@ import {
 // import LinearGradient from "react-native-linear-gradient";
 import * as Animatable from "react-native-animatable";
 import { LinearGradient } from "expo-linear-gradient";
-import { FontAwesome } from "@expo/vector-icons";
 
 import * as theme from "../../assets/theme";
 
@@ -32,20 +31,15 @@ const SplashScreen = ({ navigation }) => {
         />
       </View>
       <Animatable.View style={styles.footer} animation="fadeInUpBig">
-        <Text style={styles.title}>Stay connected with everyone!</Text>
-        <Text style={styles.text}>Sign in with account</Text>
+        <Text style={styles.title}>Just drive and earn money!</Text>
+        <Text style={styles.text}>Sign in and start!</Text>
         <View style={styles.button}>
           <TouchableOpacity onPress={() => navigation.navigate("SignInScreen")}>
             <LinearGradient
               colors={["#d83c54", "#961125"]}
               style={styles.signIn}
             >
-              <Text style={styles.textSign}>Get Started</Text>
-              {/* <FontAwesome
-                name="angle-right"
-                size={theme.SIZES.icon * 1.2}
-                color={theme.COLORS.white}
-              /> */}
+              <Text style={styles.textSign}>Start</Text>
             </LinearGradient>
           </TouchableOpacity>
         </View>
