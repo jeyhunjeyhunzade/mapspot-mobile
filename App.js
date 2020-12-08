@@ -12,14 +12,6 @@ const App = () => {
   return (
     <NavigationContainer>
       <RootStackScreen />
-
-      {/* <Stack.Navigator initialRouteName="HomeScreen">
-        <Stack.Screen
-          name="HomeScreen"
-          component={HomeScreen}
-          options={{ headerShown: false }}
-        />
-      </Stack.Navigator> */}
     </NavigationContainer>
   );
 };

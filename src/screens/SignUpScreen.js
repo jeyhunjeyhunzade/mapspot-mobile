@@ -76,14 +76,14 @@ const SignUpScreen = ({ navigation }) => {
         barStyle="light-content"
       />
       <View style={styles.header}>
-        <Text style={styles.text_header}>Register Now!</Text>
+        <Text style={styles.text_header}>Register right now!</Text>
       </View>
       <Animatable.View animation="fadeInUpBig" style={styles.footer}>
         <Text style={styles.text_footer}>Email</Text>
         <View style={styles.action}>
           <FontAwesome name="user-o" color="#05375a" size={20} />
           <TextInput
-            placeholder="Your Email"
+            placeholder="Your email"
             style={styles.textInput}
             autoCapitalize="none"
             onChangeText={(val) => textInputChange(val)}
@@ -98,7 +98,7 @@ const SignUpScreen = ({ navigation }) => {
         <View style={styles.action}>
           <Feather name="lock" color="#05375a" size={20} />
           <TextInput
-            placeholder="Your Password"
+            placeholder="Password"
             style={styles.textInput}
             autoCapitalize="none"
             secureTextEntry={data.secureTextEntry ? true : false}
@@ -119,7 +119,7 @@ const SignUpScreen = ({ navigation }) => {
         <View style={styles.action}>
           <Feather name="lock" color="#05375a" size={20} />
           <TextInput
-            placeholder="Confirm Your Password"
+            placeholder="Password again"
             style={styles.textInput}
             autoCapitalize="none"
             secureTextEntry={data.confirm_secureTextEntry ? true : false}
