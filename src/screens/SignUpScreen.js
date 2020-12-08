@@ -76,14 +76,14 @@ const SignUpScreen = ({ navigation }) => {
         barStyle="light-content"
       />
       <View style={styles.header}>
-        <Text style={styles.text_header}>Şimdi üye ol!</Text>
+        <Text style={styles.text_header}>Register right now!</Text>
       </View>
       <Animatable.View animation="fadeInUpBig" style={styles.footer}>
         <Text style={styles.text_footer}>Email</Text>
         <View style={styles.action}>
           <FontAwesome name="user-o" color="#05375a" size={20} />
           <TextInput
-            placeholder="Emailiniz"
+            placeholder="Your email"
             style={styles.textInput}
             autoCapitalize="none"
             onChangeText={(val) => textInputChange(val)}
@@ -94,11 +94,11 @@ const SignUpScreen = ({ navigation }) => {
             </Animatable.View>
           ) : null}
         </View>
-        <Text style={[styles.text_footer, { marginTop: 35 }]}>Parola</Text>
+        <Text style={[styles.text_footer, { marginTop: 35 }]}>Password</Text>
         <View style={styles.action}>
           <Feather name="lock" color="#05375a" size={20} />
           <TextInput
-            placeholder="Parolanız"
+            placeholder="Password"
             style={styles.textInput}
             autoCapitalize="none"
             secureTextEntry={data.secureTextEntry ? true : false}
@@ -114,12 +114,12 @@ const SignUpScreen = ({ navigation }) => {
         </View>
 
         <Text style={[styles.text_footer, { marginTop: 35 }]}>
-          Parolanı Onayla
+          Confirm Password
         </Text>
         <View style={styles.action}>
           <Feather name="lock" color="#05375a" size={20} />
           <TextInput
-            placeholder="Parolanız yeniden"
+            placeholder="Password again"
             style={styles.textInput}
             autoCapitalize="none"
             secureTextEntry={data.confirm_secureTextEntry ? true : false}
@@ -136,13 +136,13 @@ const SignUpScreen = ({ navigation }) => {
 
         <View style={styles.button}>
           <LinearGradient colors={["#d83c54", "#961125"]} style={styles.signIn}>
-            <Text style={styles.textSignIn}>Üye Ol</Text>
+            <Text style={styles.textSignIn}>Sign Up</Text>
           </LinearGradient>
           <TouchableOpacity
             onPress={() => navigation.goBack()}
             style={styles.signUp}
           >
-            <Text style={styles.textSignUp}>Giriş Yap</Text>
+            <Text style={styles.textSignUp}>Sign In</Text>
           </TouchableOpacity>
         </View>
       </Animatable.View>

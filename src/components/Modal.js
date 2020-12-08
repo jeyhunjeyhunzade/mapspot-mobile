@@ -82,11 +82,7 @@ const CustomModal = ({ activeModal, setActiveModal, hours }) => {
           </View>
 
           <View style={styles.taskInfoIcons}>
-            {/* <Ionicons
-              name="ios-car"
-              size={theme.SIZES.icon * 1.1}
-              color={theme.COLORS.gray}
-            /> */}
+            
             <Entypo
               name="medal"
               size={theme.SIZES.icon * 1.1}
@@ -98,10 +94,10 @@ const CustomModal = ({ activeModal, setActiveModal, hours }) => {
 
         <View style={styles.modalHours}>
           <Text style={{ textAlign: "center", color: "purple" }}>
-            Burada animasyon olacak{" "}
+            There will be animation{" "}
           </Text>
           <Text style={{ textAlign: "center", color: "purple" }}>
-            Burada animasyon olacak
+            There will be animation
           </Text>
         </View>
 
@@ -109,7 +105,7 @@ const CustomModal = ({ activeModal, setActiveModal, hours }) => {
           <TouchableOpacity style={styles.payBtn}>
             <Text
               style={styles.payInfo}
-            >{`Göreve başla ve $${activeModal.price} kazan!`}</Text>
+            >{`Start task and earn $${activeModal.price}!`}</Text>
             <FontAwesome
               name="angle-right"
               size={theme.SIZES.icon * 1.5}

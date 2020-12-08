@@ -60,14 +60,14 @@ const SignInScreen = ({ navigation }) => {
         barStyle="light-content"
       />
       <View style={styles.header}>
-        <Text style={styles.text_header}>Hoşgeldin!</Text>
+        <Text style={styles.text_header}>Welcome!</Text>
       </View>
       <Animatable.View animation="fadeInUpBig" style={styles.footer}>
         <Text style={styles.text_footer}>Email</Text>
         <View style={styles.action}>
           <FontAwesome name="user-o" color="#05375a" size={20} />
           <TextInput
-            placeholder="Emailiniz"
+            placeholder="Your email"
             style={styles.textInput}
             autoCapitalize="none"
             onChangeText={(val) => textInputChange(val)}
@@ -78,11 +78,11 @@ const SignInScreen = ({ navigation }) => {
             </Animatable.View>
           ) : null}
         </View>
-        <Text style={[styles.text_footer, { marginTop: 35 }]}>Parola</Text>
+        <Text style={[styles.text_footer, { marginTop: 35 }]}>Password</Text>
         <View style={styles.action}>
           <Feather name="lock" color="#05375a" size={20} />
           <TextInput
-            placeholder="Parolanız"
+            placeholder="Your password"
             style={styles.textInput}
             autoCapitalize="none"
             secureTextEntry={data.secureTextEntry ? true : false}
@@ -106,7 +106,7 @@ const SignInScreen = ({ navigation }) => {
               colors={["#d83c54", "#961125"]}
               style={styles.signIn}
             >
-              <Text style={styles.textSignIn}>Giriş Yap</Text>
+              <Text style={styles.textSignIn}>Sign In</Text>
             </LinearGradient>
           </TouchableOpacity>
 
@@ -114,7 +114,7 @@ const SignInScreen = ({ navigation }) => {
             onPress={() => navigation.navigate("SignUpScreen")}
             style={styles.signUp}
           >
-            <Text style={styles.textSignUp}>Üye Ol</Text>
+            <Text style={styles.textSignUp}>Sign Up</Text>
           </TouchableOpacity>
         </View>
       </Animatable.View>
